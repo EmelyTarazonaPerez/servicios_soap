@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.2 
+Visite https://eclipse-ee4j.github.io/jaxb-ri 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2025.02.04 a las 08:15:05 PM COT 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://www.ejemplo.com/hora">
+    <schemaBindings map="false">
+      <package name="com.ejemplo.hora"/>
+    </schemaBindings>
+    <bindings scd="tns:root">
+      <class ref="com.ejemplo.hora.Root"/>
+    </bindings>
+  </bindings>
+  <bindings scd="x-schema::tns" xmlns:tns="http://www.ejemplo.com/mensaje">
+    <schemaBindings map="false">
+      <package name="com.ejemplo.mensaje"/>
+    </schemaBindings>
+    <bindings scd="tns:GetMensajeRequest">
+      <class ref="com.ejemplo.mensaje.GetMensajeRequest"/>
+    </bindings>
+    <bindings scd="tns:GetMensajeResponse">
+      <class ref="com.ejemplo.mensaje.GetMensajeResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
+
