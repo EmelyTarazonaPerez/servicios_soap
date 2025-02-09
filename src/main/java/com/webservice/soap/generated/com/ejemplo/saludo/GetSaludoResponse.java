@@ -2,11 +2,11 @@
 // Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.2 
 // Visite https://eclipse-ee4j.github.io/jaxb-ri 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2025.02.04 a las 08:15:05 PM COT 
+// Generado el: 2025.02.09 a las 05:38:01 PM COT 
 //
 
 
-package com.webservice.soap.generated.com.ejemplo.hora;
+package com.webservice.soap.generated.com.ejemplo.saludo;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -25,7 +25,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="Hora" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
+ *         &lt;element name="mensaje" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,28 +36,36 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "hora"
+    "mensaje"
 })
-@XmlRootElement(name = "root")
-public class Root {
+@XmlRootElement(name = "GetSaludoResponse")
+public class GetSaludoResponse {
 
-    @XmlElement(name = "Hora")
-    protected int hora;
+    @XmlElement(required = true)
+    protected String mensaje;
 
     /**
-     * Obtiene el valor de la propiedad hora.
+     * Obtiene el valor de la propiedad mensaje.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getHora() {
-        return hora;
+    public String getMensaje() {
+        return mensaje;
     }
 
     /**
-     * Define el valor de la propiedad hora.
+     * Define el valor de la propiedad mensaje.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setHora(int value) {
-        this.hora = value;
+    public void setMensaje(String value) {
+        this.mensaje = value;
     }
 
 }
