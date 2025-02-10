@@ -2,7 +2,7 @@ package com.webservice.soap.endpoint;
 
 import com.webservice.soap.generated.com.ejemplo.saludo.GetSaludoRequest;
 import com.webservice.soap.generated.com.ejemplo.saludo.GetSaludoResponse;
-import com.webservice.soap.service.buildHealth;
+import com.webservice.soap.service.contruirMensajeSaludo;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
@@ -12,9 +12,9 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 public class SaludoEndpoint {
     private static final String NAMESPACE_URI = "http://www.ejemplo.com/saludo";
 
-    private buildHealth saludo;
+    private contruirMensajeSaludo saludo;
 
-    public SaludoEndpoint(buildHealth saludo) {
+    public SaludoEndpoint(contruirMensajeSaludo saludo) {
         this.saludo = saludo;
     }
 

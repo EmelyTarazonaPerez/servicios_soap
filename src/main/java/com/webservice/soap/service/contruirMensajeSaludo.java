@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Service
-public class buildHealth {
+public class contruirMensajeSaludo {
 
     private static final Map<String, Integer> SALUDOS = new LinkedHashMap<>();
 
