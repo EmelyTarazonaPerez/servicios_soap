@@ -33,7 +33,7 @@ public class SaludoEndpoint {
     @ResponsePayload
     public GetSaludoResponse obtenerSaludo(@RequestPayload GetSaludoRequest request) {
         GetSaludoResponse response = new GetSaludoResponse();
-        response.setMensaje(saludo.build(request.getHora()));
+        response.setMensaje(saludo.obtenerSaludo(request.getHora()));
         return response;
 
     }
