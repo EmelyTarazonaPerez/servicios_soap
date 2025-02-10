@@ -2,11 +2,11 @@
 // Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.2 
 // Visite https://eclipse-ee4j.github.io/jaxb-ri 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2025.02.04 a las 08:15:05 PM COT 
+// Generado el: 2025.02.09 a las 05:38:01 PM COT 
 //
 
 
-package com.webservice.soap.generated.com.ejemplo.hora;
+package com.webservice.soap.generated.com.ejemplo.saludo;
 
 import jakarta.xml.bind.annotation.XmlRegistry;
 
@@ -14,7 +14,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the com.ejemplo.hora package. 
+ * generated in the com.ejemplo.saludo package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -30,18 +30,26 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.ejemplo.hora
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.ejemplo.saludo
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link Root }
+     * Create an instance of {@link GetSaludoRequest }
      * 
      */
-    public Root createRoot() {
-        return new Root();
+    public GetSaludoRequest createGetSaludoRequest() {
+        return new GetSaludoRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetSaludoResponse }
+     * 
+     */
+    public GetSaludoResponse createGetSaludoResponse() {
+        return new GetSaludoResponse();
     }
 
 }

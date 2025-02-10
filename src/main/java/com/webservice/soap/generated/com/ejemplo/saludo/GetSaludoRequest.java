@@ -6,11 +6,10 @@
 //
 
 
-package com.webservice.soap.generated.com.ejemplo.mensaje;
+package com.webservice.soap.generated.com.ejemplo.saludo;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
-import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.XmlType;
 
@@ -25,7 +24,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="mensaje" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="hora" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +35,27 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "mensaje"
+    "hora"
 })
-@XmlRootElement(name = "GetMensajeResponse")
-public class GetMensajeResponse {
+@XmlRootElement(name = "GetSaludoRequest")
+public class GetSaludoRequest {
 
-    @XmlElement(required = true)
-    protected String mensaje;
+    protected int hora;
 
     /**
-     * Obtiene el valor de la propiedad mensaje.
+     * Obtiene el valor de la propiedad hora.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getMensaje() {
-        return mensaje;
+    public int getHora() {
+        return hora;
     }
 
     /**
-     * Define el valor de la propiedad mensaje.
+     * Define el valor de la propiedad hora.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setMensaje(String value) {
-        this.mensaje = value;
+    public void setHora(int value) {
+        this.hora = value;
     }
 
 }
