@@ -2,7 +2,7 @@ package com.webservice.soap.endpoint;
 
 import com.webservice.soap.generated.com.ejemplo.saludo.GetSaludoRequest;
 import com.webservice.soap.generated.com.ejemplo.saludo.GetSaludoResponse;
-import com.webservice.soap.service.contruirMensajeSaludo;
+import com.webservice.soap.service.impl.contruirMensajeSaludo;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;

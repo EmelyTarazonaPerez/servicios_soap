@@ -6,7 +6,7 @@
 //
 
 
-package com.webservice.soap.generated.com.ejemplo.saludo;
+package com.webservice.soap.generated.com.ejemplo.fondos;
 
 import jakarta.xml.bind.annotation.XmlRegistry;
 
@@ -14,7 +14,7 @@ import jakarta.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the com.ejemplo.saludo package. 
+ * generated in the com.ejemplo.fondos package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -30,26 +30,26 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.ejemplo.saludo
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.ejemplo.fondos
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link GetSaludoRequest }
+     * Create an instance of {@link RequestPay }
      * 
      */
-    public GetSaludoRequest createGetSaludoRequest() {
-        return new GetSaludoRequest();
+    public RequestPay createRequestPay() {
+        return new RequestPay();
     }
 
     /**
-     * Create an instance of {@link GetSaludoResponse }
+     * Create an instance of {@link ResponsePay }
      * 
      */
-    public GetSaludoResponse createGetSaludoResponse() {
-        return new GetSaludoResponse();
+    public ResponsePay createResponsePay() {
+        return new ResponsePay();
     }
 
 }

@@ -6,7 +6,7 @@
 //
 
 
-package com.webservice.soap.generated.com.ejemplo.mensaje;
+package com.webservice.soap.generated.com.ejemplo.fondos;
 
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
@@ -25,7 +25,7 @@ import jakarta.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="mensaje" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="state" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -36,36 +36,36 @@ import jakarta.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "mensaje"
+    "state"
 })
-@XmlRootElement(name = "GetMensajeResponse")
-public class GetMensajeResponse {
+@XmlRootElement(name = "ResponsePay")
+public class ResponsePay {
 
     @XmlElement(required = true)
-    protected String mensaje;
+    protected String state;
 
     /**
-     * Obtiene el valor de la propiedad mensaje.
+     * Obtiene el valor de la propiedad state.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getMensaje() {
-        return mensaje;
+    public String getState() {
+        return state;
     }
 
     /**
-     * Define el valor de la propiedad mensaje.
+     * Define el valor de la propiedad state.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setMensaje(String value) {
-        this.mensaje = value;
+    public void setState(String value) {
+        this.state = value;
     }
 
 }
