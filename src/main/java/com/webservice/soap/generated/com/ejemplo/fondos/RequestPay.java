@@ -54,14 +54,14 @@ public class RequestPay {
 
     protected float mount;
     @XmlElement(required = true)
-    protected BigDecimal sourceaccount;
+    protected String sourceaccount;
     @XmlElement(required = true)
-    protected BigDecimal destinationaccount;
+    protected String destinationaccount;
     @XmlElement(required = true)
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar date;
     @XmlElement(required = true)
-    protected BigDecimal code;
+    protected String code;
 
     /**
      * Obtiene el valor de la propiedad mount.
@@ -84,10 +84,10 @@ public class RequestPay {
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link String }
      *     
      */
-    public BigDecimal getSourceaccount() {
+    public String getSourceaccount() {
         return sourceaccount;
     }
 
@@ -96,22 +96,20 @@ public class RequestPay {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link String }
      *     
      */
-    public void setSourceaccount(BigDecimal value) {
+    public void setSourceaccount(String value) {
         this.sourceaccount = value;
     }
 
     /**
      * Obtiene el valor de la propiedad destinationaccount.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigDecimal }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
-    public BigDecimal getDestinationaccount() {
+    public String getDestinationaccount() {
         return destinationaccount;
     }
 
@@ -120,10 +118,10 @@ public class RequestPay {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link String }
      *     
      */
-    public void setDestinationaccount(BigDecimal value) {
+    public void setDestinationaccount(String value) {
         this.destinationaccount = value;
     }
 
@@ -156,10 +154,10 @@ public class RequestPay {
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link String }
      *     
      */
-    public BigDecimal getCode() {
+    public String getCode() {
         return code;
     }
 
@@ -168,10 +166,10 @@ public class RequestPay {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link String }
      *     
      */
-    public void setCode(BigDecimal value) {
+    public void setCode(String value) {
         this.code = value;
     }
 

@@ -16,6 +16,6 @@ public class coreRest {
 
     @PayloadRoot(namespace = "NAMESPACE_URI", localPart = "RequestPay")
     public ResponsePay processPay (@RequestPayload RequestPay requestPay) {
-        return paymentOperations.FundTransfer();
+        return paymentOperations.FundTransfer(requestPay);
     }
 }
