@@ -5,17 +5,9 @@
 Este archivo ha sido generado por Eclipse Implementation of JAXB v3.0.2 
 Visite https://eclipse-ee4j.github.io/jaxb-ri 
 Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-Generado el: 2025.02.04 a las 08:15:05 PM COT 
+Generado el: 2025.02.09 a las 05:38:01 PM COT 
 
   -->
-  <bindings scd="x-schema::tns" xmlns:tns="http://www.ejemplo.com/hora">
-    <schemaBindings map="false">
-      <package name="com.ejemplo.hora"/>
-    </schemaBindings>
-    <bindings scd="tns:root">
-      <class ref="com.ejemplo.hora.Root"/>
-    </bindings>
-  </bindings>
   <bindings scd="x-schema::tns" xmlns:tns="http://www.ejemplo.com/mensaje">
     <schemaBindings map="false">
       <package name="com.ejemplo.mensaje"/>
@@ -25,6 +17,17 @@ Generado el: 2025.02.04 a las 08:15:05 PM COT
     </bindings>
     <bindings scd="tns:GetMensajeResponse">
       <class ref="com.ejemplo.mensaje.GetMensajeResponse"/>
+    </bindings>
+  </bindings>
+  <bindings scd="x-schema::tns" xmlns:tns="http://www.ejemplo.com/saludo">
+    <schemaBindings map="false">
+      <package name="com.ejemplo.saludo"/>
+    </schemaBindings>
+    <bindings scd="tns:GetSaludoRequest">
+      <class ref="com.ejemplo.saludo.GetSaludoRequest"/>
+    </bindings>
+    <bindings scd="tns:GetSaludoResponse">
+      <class ref="com.ejemplo.saludo.GetSaludoResponse"/>
     </bindings>
   </bindings>
 </bindings>
