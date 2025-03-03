@@ -1,17 +1,18 @@
 package com.webservice.soap.service.impl;
 
-import com.webservice.soap.generated.com.ejemplo.fondos.RequestPay;
-import com.webservice.soap.generated.com.ejemplo.fondos.ResponsePay;
+import com.webservice.soap.generated.com.ejemplo.fondos.*;
 import com.webservice.soap.repository.service.RepositoryBd;
 import com.webservice.soap.service.PaymentOperations;
-import com.webservice.soap.service.model.Cuenta;
-import com.webservice.soap.service.model.InfoCliente;
+import com.webservice.soap.model.Cuenta;
+import com.webservice.soap.model.InfoCliente;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.Optional;
 
 public class FundTransferImpl implements PaymentOperations {
 
+    @Autowired
     private RepositoryBd repositorioClients;
 
     @Override
@@ -24,39 +25,30 @@ public class FundTransferImpl implements PaymentOperations {
 
         InfoCliente infoCliente = repositorioClients.buscarDatosCliente(tipoDocumento, numeroDocumento);
         InfoCliente infoDestinario = repositorioClients.buscarCuentaBancariaTercero(requestPay.getDestinationaccount());
-
         validarCuentaBancaria(infoCliente, requestPay.getSourceaccount());
         validarCuentaBancaria(infoDestinario, requestPay.getDestinationaccount());
-        validarCuentaActiva(infoDestinario, requestPay.getDestinationaccount());
-
-
        // llamar a la base de datos dbCliente para conseguir datos bancarios ---
        // llamar a la bse de datos dbCliente y conseguir la cuenta bancaria a depositar retornar usuario gmail
 
-        //logica
 
 
         return null;
     }
 
-    public void validarCuentaBancaria(InfoCliente infoCuentas, String numerouenta){
-        boolean cuentaOrigenExiste = Arrays.stream(infoCuentas.getCuentasBancarias())
-                .anyMatch(x -> x.getCuenta().equals(numerouenta));
+    public void validarCuentaBancaria(InfoCliente infoCuentas, String numeroCuenta){
+        // Buscar la cuenta bancaria
+        Optional<Cuenta> cuentaEncontrada = infoCuentas.getCuentasBancarias().stream()
+                .filter(cuenta -> cuenta.getCuenta().equals(numeroCuenta))
+                .findFirst();
 
-        if (!cuentaOrigenExiste) {
+        // Validar si la cuenta existe
+        if (cuentaEncontrada.isEmpty()) {
             throw new RuntimeException("La cuenta origen no existe");
         }
-    }
-
-    public void validarCuentaActiva(InfoCliente infoCuentas, String numerouenta){
-        Cuenta cuentaOrigenExiste = (Cuenta) Arrays.stream(infoCuentas.getCuentasBancarias())
-                .filter(x -> x.getCuenta().equals(numerouenta));
-
-        if (!cuentaOrigenExiste.getActiva()){
-            throw new RuntimeException("La cuenta a depositar no esta activa");
+        // Validar si la cuenta está activa
+        if (!cuentaEncontrada.get().getActiva()) {
+            throw new RuntimeException("La cuenta no está activa");
         }
     }
-
-    public void
 
 }
