@@ -67,6 +67,6 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 
     @Bean
     public XsdSchema pagosFondosShema() {
-        return new SimpleXsdSchema(new ClassPathResource("xsd/fondos.xsd"));
+        return new SimpleXsdSchema(new ClassPathResource("xsd/pagosFondos.xsd"));
     }
 }

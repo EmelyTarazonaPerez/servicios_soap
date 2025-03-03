@@ -11,7 +11,7 @@
                 <xs:element name="sourceaccount" type="xs:decimal"/>
                 <xs:element name="destinationaccount" type="xs:decimal"/>
                 <xs:element name="date" type="xs:dateTime"/>
-                <xs:element name="code" type="xs:decimal"/>
+                <xs:element name="code" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
