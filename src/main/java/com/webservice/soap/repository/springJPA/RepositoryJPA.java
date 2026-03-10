@@ -9,4 +9,6 @@ import java.util.Optional;
 public interface  RepositoryJPA extends JpaRepository<InfoCliente, Integer> {
 
     Optional<InfoCliente> findByTipoDocumentoAndNumeroDocumento(String tipoDocumento, String numeroDocumento);
+    Optional<InfoCliente> findByCuentasBancariasCuenta(String numeroCuenta);
+
 }

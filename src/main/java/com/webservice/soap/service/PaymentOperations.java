@@ -2,6 +2,7 @@ package com.webservice.soap.service;
 
 import com.webservice.soap.generated.com.ejemplo.fondos.RequestPay;
 import com.webservice.soap.generated.com.ejemplo.fondos.ResponsePay;
+import org.springframework.stereotype.Service;
 
 public interface PaymentOperations {
 

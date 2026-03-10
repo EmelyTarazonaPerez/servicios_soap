@@ -6,36 +6,51 @@ import com.webservice.soap.service.PaymentOperations;
 import com.webservice.soap.model.Cuenta;
 import com.webservice.soap.model.InfoCliente;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
+import static com.webservice.soap.utils.DataTest.id;
+import static com.webservice.soap.utils.DataTest.user;
+
+@Service
 public class FundTransferImpl implements PaymentOperations {
 
     @Autowired
     private RepositoryBd repositorioClients;
 
     @Override
+    @Transactional
     public ResponsePay FundTransfer(RequestPay requestPay) {
         ResponsePay response = new ResponsePay();
        // Encontrar el usuario con numero de documento extraido del jwt
-        String tipoDocumento =   "";
-        String numeroDocumento = "";
-
+        String tipoDocumento = id;
+        String numeroDocumento =  user;
 
         InfoCliente infoCliente = repositorioClients.buscarDatosCliente(tipoDocumento, numeroDocumento);
         InfoCliente infoDestinario = repositorioClients.buscarCuentaBancariaTercero(requestPay.getDestinationaccount());
-        validarCuentaBancaria(infoCliente, requestPay.getSourceaccount());
-        validarCuentaBancaria(infoDestinario, requestPay.getDestinationaccount());
-       // llamar a la base de datos dbCliente para conseguir datos bancarios ---
-       // llamar a la bse de datos dbCliente y conseguir la cuenta bancaria a depositar retornar usuario gmail
 
+        Optional<Cuenta> cuentaOrigen =  validarCuentaBancaria(infoCliente, requestPay.getSourceaccount());
+        Optional<Cuenta> cuentaDestino = validarCuentaBancaria(infoDestinario, requestPay.getDestinationaccount());
 
+        Float monto = requestPay.getMount();
 
-        return null;
+        if (cuentaOrigen.get().getCupo() < monto) {
+            throw new RuntimeException("Saldo insuficiente");
+        }
+        cuentaOrigen.get().setCupo(cuentaOrigen.get().getCupo() - monto);
+        cuentaDestino.get().setCupo(cuentaDestino.get().getCupo() + monto);
+
+        repositorioClients.save(cuentaOrigen.get());
+        repositorioClients.save(cuentaDestino.get());
+        response.setState("Transaccion finalizada con exito");
+        return response;
     }
 
-    public void validarCuentaBancaria(InfoCliente infoCuentas, String numeroCuenta){
+    public Optional<Cuenta> validarCuentaBancaria(InfoCliente infoCuentas, String numeroCuenta){
         // Buscar la cuenta bancaria
         Optional<Cuenta> cuentaEncontrada = infoCuentas.getCuentasBancarias().stream()
                 .filter(cuenta -> cuenta.getCuenta().equals(numeroCuenta))
@@ -49,6 +64,7 @@ public class FundTransferImpl implements PaymentOperations {
         if (!cuentaEncontrada.get().getActiva()) {
             throw new RuntimeException("La cuenta no está activa");
         }
+        return cuentaEncontrada;
     }
 
 }

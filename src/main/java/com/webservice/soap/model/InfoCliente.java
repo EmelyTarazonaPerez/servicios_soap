@@ -1,13 +1,12 @@
 package com.webservice.soap.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name="cliente")
 @AllArgsConstructor
@@ -28,6 +27,7 @@ public class InfoCliente {
     String primerApellido;
     @Column(name="segundo_apellido")
     String segundoApellido;
+    @ToString.Exclude
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     List<Cuenta> cuentasBancarias;
     String  pais;
