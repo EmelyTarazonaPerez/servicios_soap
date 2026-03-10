@@ -1,0 +1,26 @@
+package com.webservice.soap.endpoint;
+
+import com.webservice.soap.generated.com.ejemplo.fondos.RequestPay;
+import com.webservice.soap.generated.com.ejemplo.fondos.ResponsePay;
+import com.webservice.soap.service.PaymentOperations;
+import org.springframework.ws.server.endpoint.annotation.Endpoint;
+import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
+import org.springframework.ws.server.endpoint.annotation.RequestPayload;
+import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+
+@Endpoint
+public class CoreRest {
+
+    private  PaymentOperations paymentOperations;
+    private static final String NAMESPACE_URI = "http://www.ejemplo.com/fondos";
+
+    public CoreRest (PaymentOperations paymentOperations){
+        this.paymentOperations = paymentOperations;
+    }
+
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "RequestPay")
+    @ResponsePayload
+    public ResponsePay processPay (@RequestPayload RequestPay requestPay) {
+        return paymentOperations.FundTransfer(requestPay);
+    }
+}

@@ -1,4 +1,4 @@
-package com.webservice.soap.service;
+package com.webservice.soap.service.impl;
 
 import org.springframework.stereotype.Service;
 

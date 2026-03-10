@@ -5,5 +5,5 @@
 // Generado el: 2025.03.01 a las 11:46:15 PM COT 
 //
 
-@jakarta.xml.bind.annotation.XmlSchema(namespace = "http://www.ejemplo.com/saludo", elementFormDefault = jakarta.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package com.webservice.soap.generated.com.ejemplo.saludo;
+@jakarta.xml.bind.annotation.XmlSchema(namespace = "http://www.ejemplo.com/fondos", elementFormDefault = jakarta.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package com.webservice.soap.generated.com.ejemplo.fondos;
